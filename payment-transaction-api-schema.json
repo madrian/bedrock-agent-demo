@@ -1,0 +1,69 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+      "title": "PaymentTransaction API",
+      "description": "API for managing payment transactions",
+      "version": "1.0.0"
+    },
+    "paths": {
+      "/getTransaction/": {
+        "post": {
+          "description": "Get payment transaction by id",
+          "parameters": [
+            {
+              "name": "transactionId",
+              "in": "query",
+              "description": "Payment transaction identifier",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful response with payment transaction data",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/PaymentTransactionData"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "PaymentTransactionData": {
+          "type": "object",
+          "description": "Single payment transaction data",
+          "properties": {
+            "transactionId": {
+              "type": "integer",
+              "description": "Payment transaction identifier"
+            },
+            "amount": {
+              "type": "number",
+              "description": "Price of the payment transaction"
+            },
+            "product": {
+              "type": "string",
+              "description": "Description of the product purchased for this payment transaction"
+            },
+            "quantity": {
+              "type": "number",
+              "description": "Number of items purchased in this payment transaction"
+            },
+            "date": {
+              "type": "string",
+              "description": "Date of this payment transaction"
+            }
+          }
+        }
+      }
+    }
+  }
