@@ -1,7 +1,7 @@
 # Bedrock Agent Demo to manage payment transactions
 This is a simple Amazon Bedrock Agent that interacts with a Payment API in a Lambda function.
 
-Refer to this [blog post]() for details on the step-by-step guide.
+Refer to this [blog post](https://eidorian.com/posts/integrate-bedrock-agent-with-lambda/) for details on the step-by-step guide.
 
 ## Bedrock Agent instruction
 
